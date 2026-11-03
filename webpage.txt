@@ -1,0 +1,483 @@
+==Description==
+...
+
+== Group Members ==
+Aidan Jennings-Cashman<br>
+Karl Drabek<br>
+Lintaro Ishizuki (lintaroi@uw.edu)
+
+== Prototypes ==
+
+{| style="width:100%;"
+| style="width:50%; vertical-align:top;" |
+
+=== Prototype 1: Climbing Game ===
+Play the game: [https://mrlint01.github.io/Climbing-Game/]
+Source code: [https://github.com/MrLint01/Climbing-Game]
+
+[[File:Climbing game.png | 550 px]]
+
+=== Prototype 3: Dice Game ===
+Play the game: [https://karl-drabek.github.io/Dice-Potions/]
+Source code: [https://github.com/Karl-Drabek/Dice-Potions]
+
+[[File:Dice Game.png | 550 px]]
+
+=== Prototype 5: Top Down Shooter ===
+Play the game: [https://aidanjc19.github.io/Silver-Dollar/]
+Source code: [https://github.com/aidanjc19/Silver-Dollar]
+
+[[File:Shooter screenshot3.jpg | 550 px]]
+
+| style="width:50%; vertical-align:top;" |
+
+=== Prototype 2: Biking Game ===
+Play the game: [https://karl-drabek.github.io/Bike-Game/]
+Source code: [https://github.com/Karl-Drabek/Bike-Game]
+
+[[File:Bike Game.png | 550 px]]
+
+=== Prototype 4: Memory Game ===
+Play the game: [https://mrlint01.github.io/memory-game/]
+Source code: [https://github.com/MrLint01/memory-game]
+
+[[File:memory_version_0.png | 550 px]]
+
+|}
+
+== FINAL CHOICE: Flash Recall ==
+
+We decided to move forward with Flash Recall (the memory game).
+
+== Logging Brainstorming ==
+
+=== General Metrics ===
+
+* '''Average session duration:''' How long do players spend per play session?
+* '''Number of stages completed per session:''' How far do players typically progress before stopping?
+
+=== Game-Specific Metrics ===
+
+* '''Shortcut usage:''' How often do players use shortcuts (e.g., typing the first letter of a color or direction) versus full inputs?
+* '''Input errors:''' Which card types or inputs cause the most mistakes or wrong answers?
+* '''Level progression:''' Are players consistently able to unlock later stages, or do they get stuck early?
+* '''Time taken per round:''' How much time do players take to memorize and respond at different difficulty levels?
+
+=== Core Progression & Adaptive Gameplay Metrics ===
+
+* '''Level completion time:''' Track how long it takes players to complete each level (used for adaptive difficulty adjustments).
+* '''Retention (play time):''' Total play time per player across sessions.
+* '''Level reached:''' Highest level achieved per player.
+* '''Which level players quit on:''' Identify drop-off points in progression.
+* '''Whether the player quit mid-level:''' Did they exit before finishing the level?
+* '''Time spent on previous level before quit:''' Measure frustration or difficulty.
+* '''Pass rate of previous level when player quit:''' Did they barely pass, barely fail, or succeed comfortably?
+
+=== Performance Metrics Per Level ===
+
+* '''Success rate per level:''' Percentage of players who complete each level.
+* '''Number of retries per level:''' When eventually completed and when never completed
+* '''Average play time per level:''' Mean time to finish a level.
+* '''Play time distribution per level/round:''' Histogram of completion times.
+* '''Average stars earned per level:''' Mean star rating.
+* '''Maximum stars per level:''' How often players achieve perfect scores.
+
+=== Failure Analysis ===
+
+* '''Failed card data:''' For each level, track: Card type, Modifier, Frequency of failure
+* '''Error concentration by type/modifier:''' Identify which combinations cause the most mistakes (pie chart).
+
+=== Retention & Engagement ===
+
+* '''Retention vs level chart:''' Play time by level (eventually split by discriminating factors such as skill group, new vs returning players, etc.).
+* '''Percent of players who played sandbox mode.'''
+* '''Time spent in sandbox mode.'''
+
+=== Visualization Plan ===
+
+* Retention (play time) vs level – bar chart (split later by player segment).
+* Success rates per level – bar chart.
+* Average play time per level – bar chart.
+* Play time per level/round – histogram.
+* Number of retries per level (completed vs not completed) – bar chart.
+* Average stars per level – bar chart.
+* Quit level distribution – bar chart.
+* Failed card type/modifier breakdown – pie chart.
+
+== Development Phase (1/16-2/20)==
+
+=== Iteration I (1/16–1/19) ===
+
+==== Goals ====
+
+* Simplify and refine the UI to make it more minimalistic.  
+* Shift the style to feel more like a game rather than a study tool, which AI had made it resemble.  
+* Add more modifiers and card types for variety and challenge.  
+* Create a dedicated main menu, with separate game modes and tutorial/reference pages.  
+* Improve the timer, possibly with a shrinking bar to visually show time remaining.  
+* Make the prompt cards stand out more clearly and be easier to read.
+
+==== Work Completed ====
+
+* Redesigned the entire UI using a black-and-white color scheme.  
+* Used more rigid shapes, avoiding curvy rectangles that felt less game-like.  
+* Added a dedicated "Adventure Mode" where players start with one card type ("numbers") and gain options to add more card types or modifiers after each cleared round. Players have 3 lives, losing one when they fail a round. Points increase as the game gets harder. Essentially, an endless RPG-style mode until lives run out.  
+* Introduced new modifiers such as Swap Cards, Platformer, Fogs, and Pop-ups, plus new card types like Shapes and Directions.  
+* Created a clear main menu with distinct buttons for each game mode.  
+* Changed the timer to a simple, clear shrinking bar.
+
+==== Next Steps ====
+
+* Some modifiers may be too difficult. Adjust point rewards for these in Adventure Mode to balance difficulty.  
+* The Reference card likely doesn't provide enough info to teach players properly. Plan to create a dedicated tutorial mode or similar feature and confirm this in the next playtest.
+
+==== Version Screenshots ====
+
+[[File:Memory_main_menu.png| 250 px]]
+[[File:memory game.png | 500 px]]
+[[File:memory game 2.png | 500 px]]
+[[File:Memory ref.png| 500 px]]
+
+=== Playtesting Results (1/20) ===
+
+==== Participants ====
+
+For this playtest, we asked a few classmates to try the game. We talked them through the rules and explained how to play while they were going through it, so they could understand the core mechanics right away.
+
+==== Main Finding ====
+
+Since the game lacked an in-built tutorial or control guide, we had to explain key controls like pressing "Enter" to skip the timer and submit answers quickly. Even after being told about shortcuts, such as typing just the first letter of a color, many players continued to type the full word. Some players were confused by the Direction cards, attempting to use arrow keys instead of typing the words "Right," "Left," "Up," or "Down," which made it clear the input expectations weren't obvious. Players suggested adding modifiers such as swapping or shuffling cards to increase challenge, or changing text or font colors, but these could make the game harder too fast. While there is a Practice Mode allowing players to customize card types and timing, there's no progressive mode to keep players engaged over longer sessions (30+ minutes). On the other hand, some people were impressed by the simple, game-like UI and how clean it looked, which made it feel less daunting and easier to get into.
+
+==== Planned Improvements ====
+
+We plan to add a simple in-game control guide that explains important shortcuts like pressing Enter to skip or submit answers, along with a reference sheet showing all card types and modifiers in one place. We are also considering adding a dedicated "Tutorial Mode," which is a short practice stage where players can learn all the shortcuts, keybinds, and card types gradually through a few "Set" rounds that introduce the basic cards step by step. For example, we will make sure to clearly explain the expected input for Direction cards, so players know to type the words instead of using arrow keys. Additionally, we want to create a progressive mode with increasing difficulty to give players a clear long-term goal. Maybe like an "Endless Mode" where rounds gradually become harder and new modifiers or cards are introduced?
+
+=== Iteration II (1/20-1/21) ===
+
+==== Goals ====
+
+* Add a simple in-game control guide that explains important shortcuts, like pressing Enter to skip or submit answers.  
+* Consider adding a dedicated "Tutorial Mode", a short practice stage where players gradually learn shortcuts, keybinds, and card types through a few "Set" rounds introducing basic cards step by step.  
+* Clearly explain expected inputs for cards, such as Direction cards requiring typed words instead of arrow keys.  
+* Develop a progressive mode with increasing difficulty to provide a clear long-term goal, such as an "Endless Mode" where rounds get harder and new modifiers or cards appear over time.
+
+==== Work Completed ====
+
+* Removed Adventure Mode because it didn't fit the core gameplay and was too complex to explain.  
+* Added a dedicated Tutorial Mode with text prompts above cards, showing keybinds and controls players need to remember.  
+* Created a simple Endless Mode with editable progression, allowing modification of which cards and modifiers appear in specific rounds.  
+* Added a Stage Mode featuring simple rounds with chosen modifiers, cards, number of cards, and rounds. This may be a better alternative to Adventure and Endless Modes; we'll evaluate in the next playtest.
+
+==== Next Steps ====
+
+* Improve UI clarity, especially since the main menu currently has many buttons.  
+* Brainstorm which game modes to keep and whether to focus on just one mode.
+
+==== Version Screenshots ====
+
+[[File:memory_main_menu_version_1.png| 250 px]]
+[[File:Memory tutorial 1.png| 500 px]]
+[[File:Memory tutorial 2.png| 500 px]]
+
+=== Playtesting Results (1/22) ===
+
+==== Participants ====
+
+For this playtest, we asked a few students from our class to try the game. While they were playing, we did not explain the rules or talk to them while they were playing. We wanted to test whether the game could be understood using only what was shown on the screen.
+
+==== Main Finding ====
+
+We had a dedicated "Tutorial Mode" where each round showed large text boxes explaining what answer to input and which shortcuts were accepted, such as allowing "G" for "Green," but even with these clear and prominent instructions most players still typed the full words like "Green," "Right," or "Square." This made us realize that even when we think we are keeping text short and readable, many players will simply not read instructions on the screen, even when those players are classmates who are also making games and thinking about tutorials themselves. Because our game looks very simple at first, players rely on intuition instead of reading, but getting a good time or score actually depends on learning and using these shortcuts, so a text-based tutorial alone is not effective. We also found that having many buttons on the main menu was intimidating and confusing the player flow. Almost everyone started with the tutorial and successfully finished it, but instead of moving into the core "Endless Mode" they often clicked a random different mode because there were too many choices. There was also a large difference in how quickly people understood the game. One player quickly learned all the controls and modifiers and reached round 30+ in Endless Mode, which was far beyond our expectations, but this was an outlier since most other players only reached around 10 rounds or less.
+
+==== Planned Improvements ====
+
+We need a better way to teach shortcuts and controls that does not rely only on a "Tutorial Mode" with text, since many players will not read it, so we are considering more guided "stage like" gameplay that naturally forces players to use and learn these shortcuts. To make the player's path through the game clearer, we plan to greatly reduce the number of main menu buttons to one or two options and add a large, obvious "Play" button that leads directly into the main Endless Mode instead of letting players accidentally jump into random modes. Even if we remove "Tutorial Mode" in the next playtest, we still need a clear and clickable on-screen way to exit a mode or game, because right now the only way to leave is by pressing Esc and there is no visible button for it.
+
+=== Iteration III (1/23-2/26) ===
+
+==== Goals ====
+
+* Find better ways to teach shortcuts and controls without relying only on a text-based Tutorial Mode, since playtests showed many players don't pay attention to it.
+* Design more guided, stage-like gameplay that naturally makes players use and learn shortcuts.  
+* Simplify the main menu by reducing it to one or two clear options.  
+* Add a large, obvious "Play" button that leads directly into the main mode instead of letting players enter random modes.  
+* Provide a clear on-screen button to exit a mode or game, instead of relying only on the Esc key.
+
+==== Work Completed ====
+
+* Shifted focus from Endless Mode to Stage Mode gameplay.  
+* Simplified the main menu by adding a dedicated "Play" button that leads to the Stage Selector UI.  
+* Built Stage Mode with many levels using set modifiers and card types.
+* Added a star system based on clear speed—the faster the clear, the more stars earned.  
+* Redesigned the fail screen to clearly show the original cards, prompts, correct answers, and mistakes.
+* Created the first 10 levels, though they still need more design tuning.
+
+==== Next Steps ====
+
+* Add a visible timer and round counter during gameplay.  
+* Improve the failed stage UI to also show what the player typed.  
+* Plan stage layout and difficulty curve more carefully, including when to introduce new cards and modifiers (possibly using a shared planning document).
+
+==== Version Screenshots ====
+
+[[File:memory_main_ui.png| 350 px]]
+[[File:memory_stage_page.png| 750 px]]
+[[File:memory_review_ui.png| 500 px]]
+[[File:memory_clear_UI.png| 700 px]]
+
+=== Playtesting Results (1/27) ===
+
+==== Participants ====
+For this playtest, we asked a few students around the UW campus to try our game. We talked to people in places like the HUB, the Allen Center, and the library, and asked if they would be willing to play for a short time and give feedback. About 5 students participated. We did not explain the rules or talk to them while they were playing. We wanted to test whether the game could be understood using only what was shown on the screen.
+
+==== Main Finding ====
+Players were initially confused on how to play the game. It required them being wrong at least once to understand how the game worked and what they were meant to do as the player. It is easy to lose players at this stage and had they been on their own playing the game without us there they may have quit the game at that point. So we need to add a more in depth but still relatively light tutorial to ensure players hit the ground running and start having fun right away. The implementation of this would be pausing the game and having a short bit of text display on screen to instruct the player further on what to do. They would have to click to continue the game to encourage them to read it and signal it is important. We don't want to make these too invasive as part of the fun of the game is figuring out how it works and getting a rhythm. This was our biggest conclusion we drew. We are still debating on whether or not to introduce the core concepts of the game and let the player figure out the further difficulty additions after failure. On a positive note, when players understood the game, they seemed to enjoy the gameplay and got into it.
+
+Players were sometimes unsure what to do during each part of a round. The switch between memorizing the cards and entering the answer was not very clear. Some players did not know they could press Enter to move on or submit their answer early. Others got confused about the inputs, like not realizing they could type just the first letter of a color instead of the full word. Opinions on tutorials were mixed. Some people liked figuring the game out on their own, while others wanted a short tutorial that they could skip. Players also suggested adding a stronger sense of urgency while memorizing, such as cards flashing faster before they disappear or vanishing from right to left as the bar moves.
+
+==== Planned Improvements ====
+Smaller and more easily fixable improvements we need to make include: Locking later stages until the player has completed earlier ones, clearer indications of the speed which you need to complete the stage in order to get stars, an introduction of stars to the player, an end screen for the round that has a "Next" button to encourage the user to go to the next stage.
+
+Add simple on-screen messages like "Memorize the cards, then press Enter" and "Type your answers and press Enter to submit." Clearly explain how to earn stars and show a bigger notification when a star is earned or a level is cleared, even if no stars are gained. Add a short tutorial the first time the player presses play, with an option to skip it, that explains the controls and shortcuts. Add visual effects to make the memorizing phase feel more urgent, lock later levels until earlier ones are finished, unlock sandbox mode after a few stages, and replace the green circles with real star icons.
+
+=== Stage Progression Planning (2/29) ===
+During this stage we plan the game's progression using a Google spreadsheet. Each row is a stage, and each column is a part of the game such as number of rounds, number of cards, different card types (numbers, colors, letters, directions, shapes), and modifiers (math operations, background color, misleading colors, fog, glitching, pop ups, card swap, platformer). We also add clear time goals for getting 1, 2, or 3 stars. For each stage we put an "x" in the columns to show which cards and modifiers are active. This makes it easy to see what each stage includes and how the game slowly becomes more complex.
+
+[[File:memory_stage_planning.png| 450 px]]
+
+==== Planned Improvements ====
+We plan to control how fast new ideas are introduced, aiming for a middle ground between adding things too quickly and not adding enough to keep the player interested. We plan for the first few stages to act like a playable tutorial, with only a few cards per round, a small number of rounds, and simple text boxes that explain the basic controls while the player is playing. For later stages we plan to add new card types and modifiers one by one, while still keeping older ones active so players continue practicing what they already learned. We plan to pay extra attention to harder modifiers like "Background Color" and "Misleading Colors." When these appear for the first time, our plan is to have short focused stages of about three rounds that only use color cards, so players can learn the new concept without extra distractions. 
+
+Google Spreadsheet: [https://docs.google.com/spreadsheets/d/1TKdgPKJYzKhw8bLvm_K7CEfUKcbmZ_KOsn9Ic62LNM8/edit?usp=sharing]
+
+=== Iteration IV (1/30-2/2) ===
+
+==== Goals ====
+
+* Add clear on-screen instructions to help players understand each stage.  
+* Make it easier for players to see how they can earn stars, with animations and notifications when they do.  
+* Lock later stages until players finish earlier ones to guide their progress.  
+* Create a tutorial that shows controls and shortcuts, with an option to skip it.  
+* Follow the Stage Progression chart (created 2/29) to control how fast new modifiers/cards are introduced, balancing pace to keep players engaged.  
+* Make the first few stages a playable tutorial with few cards, short rounds, and simple instructions during gameplay.  
+* Add new card types and harder modifiers like "Background Color" gradually, using focused short stages to help players learn without distractions.
+
+==== Work Completed ====
+
+* Added a Google Analytics tag to index.html and tested it to make sure tracking works.
+* Added instructions and text boxes for the first few stages to guide players. 
+* Added locks to the stages. Only "Level 1" is unlocked at the beginning. 
+* Locked sandbox mode until the player clears stage 5 to control progression.  
+* Added stopwatch and timer displays during gameplay.  
+* Reworked the first 10 rounds to better align with the instructions, text boxes, and tutorial.  
+* Followed and updated the Stage Progression sheets to reflect these changes.  
+* Updated UI for the main menu and stage selector.  
+* Replaced green circles with actual star icons.  
+* Updated stage cards to show stars earned and best time records.  
+* Improved stage clear and stage fail screens, including button placement and visual design.  
+* Created the "ALL CORRECT" or "Round Clear" animation that appears after completing a round.  
+* Added a toggleable checkbox in the settings menu to turn this animation on or off.
+* Removed "Prev" and "Next" buttons inside the "Stage Selector" and made it scrollable instead.
+
+==== Next Steps ====
+
+* Start looking into logging APIs and how to implement them in our game.  
+* Brainstorm ideas on what data to log for the API.  
+* Begin the development phase.  
+* Apply additional UI improvements where possible.
+
+==== Version Screenshots ====
+
+[[File:memory_main_menu_2.png| 350 px]]
+[[File:memory_tutorial_0.png| 450 px]]
+[[File:memory_tutorial_01.png| 450 px]]
+[[File:memory_clear.png| 420 px]]
+[[File:memory_fail.png| 420 px]]
+[[File:memory_all_correct.png| 420 px]]
+[[File:memory_settings.png| 420 px]]
+[[File:memory_stage_selection.png| 640 px]]
+
+=== Iteration V (2/2-2/6) ===
+
+==== Goals ====
+
+* Decide which logging API to use and run some initial tests.  
+* Improve the appearance of locked stage cards, possibly by using a dedicated lock icon (.png).  
+* Improve buttons—text labels like "Settings" and "References" take too much space.
+* Refine the stage selector menu.
+
+==== Work Completed ====
+
+* Created custom icon buttons for "Settings," "Statistics," "References," and "Fullscreen," as well as "Home," "Retry," "Next," and "Back."  
+* Replaced the "Locked" text on stages with a lock icon (.png).  
+* Added total star count and cleared-stage count to the stage selector menu.  
+* Redesigned the stage selector to show more levels per page and reduce horizontal scrolling, making better use of space.  
+* Added a secret "Blue Star" for clearing a stage at exceptional speed.  
+* Added animations for earning stars.  
+* Implemented a test Google Analytics logging setup in 'index.html'. It appears to work, but needs further testing with in-game event logging.
+
+==== Next Steps ====
+
+* Test arrow key input for direction cards and ensure it doesn't conflict with other inputs.  
+* Add a larger and more noticeable pop-up when a level is completed.  
+* Design special levels, such as short reveal-time stages and unique borders for stage cards.  
+* Consider adding audio and sound effects.  
+* Experiment with different timing systems (memorization-only vs. memorization + recall) and update the design sheets and stages accordingly.
+* Test the logging API and how logging actions work.
+
+==== Version Screenshots ====
+
+[[File:Memory menu 03.png| 500 px]]
+[[File:memory_stage_selection_02.png| 600 px]]
+[[File:memory_clear_02.png| 700 px]]
+[[File:memory_fail_02.png| 550 px]]
+
+=== Iteration VI (2/7–2/12) ===
+
+==== Goals ====
+
+* Follow the Kanban board TO-DO list and focus on MVP items first. Split up and assign the work.
+* Improve the UI overall. Implement better page transitions, such as animations between page switches. Add animations when switching UI/panels since they currently feel abrupt.
+* Add special levels, short reveal-time stages, special borders on stage cards for visual indication, and small icons for different stage types.
+* Add a stage selector pop-up. Include stage card pop-up menus that show the cards/modifiers for that stage, recall time, reveal time, etc. Include a dedicated Play button and an "X" exit button.
+* Create dedicated .svg and .png files for each card type/modifier. Update the stage pop-up and sandbox settings accordingly. Instead of text-only labels, use .svg/.png visuals.
+
+==== Work Completed ====
+
+* Updated 'stages-data.js' to allow more detailed customization (e.g., at least one number and one letter in each round).
+* Enabled arrow keys for directions. Need to continue testing for overriding entries and switching directions.
+* Added a more animated star animation on stage completion, including a bar-filling animation.
+* Improved page transition animations between screens. The stage selection UI now fades in, and stage cards appear one by one. This animation can be skipped by moving the mouse cursor. When all stages appear, the stars shine.
+* Added dedicated icons for different stage types: a book icon for tutorial stages, a lightning icon for "flash" stages (very short reveal time), and no icons for normal stages.
+* Created dedicated .svg and .png files for each card type/modifier. Updated the stage pop-up and sandbox settings accordingly to use visuals instead of text.
+* Updated Sandbox Mode. It now includes buttons for the stage fail panel and a stage settings button for easier stage configuration.
+* Made keybind buttons clearer. When the mouse cursor is near buttons like HOME, RETRY, NEXT, etc., the shortcut key fades in to inform the player.
+* Tried Google Analytics, but noticed it was too slow for logging data. Decided to switch to Firebase and began implementing and testing the logging logic.
+
+==== Next Steps ====
+
+* Implement localStorage logic so players can save progress, including cleared stages and stars earned.
+* Brainstorm more card types and modifiers to create more unique stages and increase total playtime to 30+ minutes.
+* Decide what to include on the statistics page and update it.
+* Keep Sandbox Mode cards/modifiers locked until players discover them in stages.
+* Implement the brainstormed cards and modifiers.
+* Add "flash" levels with very short reveal times.
+* Create levels that introduce the remaining features (glitch, fog, ads, and swap).
+
+==== Version Screenshots ====
+
+[[File:Memory stage selection animation.png| 500 px]]
+[[File:Memory stage selection 03.png| 500 px]]
+[[File:Memory stage popup 01.png| 500 px]]
+[[File:Memory sandbox 01.png| 500 px]]
+[[File:Memory sandbox 02.png| 500 px]]
+[[File:Memory clear panel 01.png| 500 px]]
+
+=== Iteration VII (2/12-2/17) ===
+
+==== Goals ====
+
+* Brainstorm more card types and modifiers to create more unique stages and increase total playtime to 30+ minutes.
+* Implement the brainstormed cards and modifiers.
+* Implement local storage to save player progress and data.
+* Create unique SVG icons for each card type and modifier.
+* Update 'stages-data.js' to align with the stage progression sheet.
+* Enforce first-letter-only inputs for stages 5–7 (tutorial modes)
+* Flash level logic/tutorial/warnings.
+* Require a more strict tabbing/first letter input requirement for tutorial levels. 
+* Keep Sandbox mode cards/modifiers locked until unlocked in stages.
+* Define and update the statistics page content.
+* Switch to Firebase. Implement logging API. 
+
+==== Work Completed ====
+
+* Brainstormed new cards and modifiers (blur, previous, rotate, text color, etc.)
+* Implemented local storage to save player progress and data.
+* Added "flash" stages between normal and tutorial stages.
+* Built and playtested through stage 40.
+* Locked Sandbox mode cards/modifiers until their stage is cleared.
+* Added warning pop-ups for flash levels.
+* Added a "show flash countdown" setting.
+* Required the Tab keybind for stage 2 and first-letter inputs for stage 5.
+* Defined statistics page content: avg time per card, avg best time per card, and Stage Mode progress.
+* Made small UI tweaks in the stage selector.
+* Set up Firebase Hosting + Firestore telemetry with session/attempt/event logging and input-based playtime tracking.
+* Added versioning metadata for releases and telemetry tagging.
+* Built a data export + analysis pipeline (Firestore export, CSV prep, analytics + charts).
+* Captured stable 'player_id' per browser and new 'session_id' per return session.
+* Logged session start/end, level start/end, and round-complete events.
+* Tracked tab/window lifecycle events (visibility/focus/blur) for accurate playtime.
+* Paused playtime after 1 minute of inactivity and resumed on next user input.
+* Added inactivity-based quit inference after 3 minutes without input.
+* Wrote telemetry to hierarchical Firestore paths (sessions, attempts, events).
+* Ensured 'total_playtime_seconds' reflects active gameplay, not 'wall-clock time'.
+
+==== Next Steps ====
+
+* Implement brainstormed cards/modifiers, new SVGs, and update Sandbox accordingly.
+* Build 100+ levels with all cards/modifiers and ~30 minutes of playtime.
+* Finish UI/style polish and playtest to catch small bugs.
+* Track time-to-complete per level for adaptive gameplay.
+* Analytics charts: retention vs level, success rate, avg time, per-round histograms, retries (completed vs not), stars (avg/max), quit level distribution.
+* Quit analysis: previous-level pass rate, mid-level quits, time spent before quitting.
+* Failure analysis: failed cards by level/type/modifier (pie chart).
+* Sandbox metrics: participation rate and time spent.
+
+==== Version Screenshots ====
+
+[[File:Memory sandbox 03.png| 500 px]]
+[[File:Memory tab.png| 500 px]]
+[[File:Memory first letter.png| 500 px]]
+[[File:Memory stats.png| 500 px]]
+[[File:Memory flash.png| 500 px]]
+
+=== Playtesting Results (2/17) ===
+
+==== Participants ====
+For this playtest, we had testers come into our class to play the game. Three testers participated. We did not explain the rules or talk to them while they were playing.
+
+==== Main Finding ====
+There were big differences in skill and adaptability across the three testers. One person only reached around level 8, while the other two played into the later stages (around level 30). They loved the flash stages because they felt different from the normal memory stages. Opinions on difficulty progression were split: one tester felt it was a bit slow, while another thought it was good since the stages are short. Even though first-letter inputs were required in the tutorial stages, one tester did not learn or use that shortcut later (they kept typing full words). They really liked the statistics page and said the competitive aspect was fun. 
+
+==== Planned Improvements ====
+The playtesters completed most of the stages in around ~10 minutes. Though this is not factoring in the optional star chasing, we need to add more levels for the release. 
+
+=== Iteration VIII (2/17-2/20) ===
+
+==== Goals ====
+
+* Implement brainstormed cards/modifiers, new SVGs, and update Sandbox accordingly.
+* Build 100+ levels with all cards/modifiers and ~30 minutes of playtime.
+* Track time-to-complete per level for adaptive gameplay.
+* Analytics charts: retention vs level, success rate, avg time, per-round histograms, retries (completed vs not), stars (avg/max), quit level distribution.
+* Quit analysis: previous-level pass rate, mid-level quits, time spent before quitting.
+* Failure analysis: failed cards by level/type/modifier (pie chart).
+* Sandbox metrics: participation rate and time spent.
+
+==== Work Completed ====
+
+* Built and playtested through stage 100+.
+* Completed all logging and graph-generation goals listed above.
+* Implemented blur, previous, text color, math ops+, rotate, and rotate+ cards/modifiers.
+* Switched Sandbox mode unlocks from stage-cleared gates to star-based requirements for cards/modifiers; stars are spent to unlock card types and modifiers.
+
+==== Next Steps ====
+
+* Switch from Development Phase to Analytics-based Iteration Phase.
+* Release the game (first iteration).
+
+==== Version Screenshots ====
+
+[[File:Memory sandbox 04.png| 600 px]]
+[[File:Memory stage selection 04.png| 600 px]]
+
+== Analytics-based Iteration Phase ==
+
+== Product Screenshot ==
+...
+
+== Game Releases ==
+...
+
+== Presentations ==
+...

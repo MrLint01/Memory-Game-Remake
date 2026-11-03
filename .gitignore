@@ -1,0 +1,93 @@
+# Dependencies
+node_modules/
+
+# Build / coverage outputs
+#dist/
+build/
+coverage/
+.nyc_output/
+.package-staging/
+
+# Generated publish artifacts
+dist/crazygames/
+dist/crazygames-small/
+dist/crazygames-large/
+dist/*.zip
+gamejolt*.zip
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+firebase-debug.log*
+firebase-debug.*.log*
+
+# Runtime files
+pids/
+*.pid
+*.pid.lock
+*.seed
+
+# Package manager caches
+.npm/
+.yarn-integrity
+
+# Tooling caches
+.eslintcache
+.parcel-cache/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Firebase local cache/state
+.firebase/
+.dataconnect/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Firebase / GCP keys
+serviceAccountKey.json
+serviceAccount*.json
+*service-account*.json
+*.key.json
+
+# Generated analysis data
+prepared_data/
+prepared_data_test/
+prepared_data_tmp_*/
+analysis_output/telemetry_test/
+prepared_data_2026-03-17/
+prepared_data_2026-03-18/
+analysis_output/**/*.csv
+analysis_output_2026-03-18/**
+!analysis_output_2026-03-18/
+!analysis_output_2026-03-18/**/
+!analysis_output_2026-03-18/**/*.png
+data_combined.json
+data_combined_sample.json
+data_combined_2026-03-18.json
+data_combined_2026-03-17.json
+*.normalized.csv
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Optional: keep this tracked for shared project targeting.
+# Uncomment if each developer should use their own Firebase project mapping.
+# .firebaserc

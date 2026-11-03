@@ -1,0 +1,6 @@
+safari_unique_players: 5
+all_unique_players: 60
+safari_player_share_percent: 8.33
+safari_avg_playtime_minutes: 1.41
+safari_median_highest_level: 0.0
+safari_median_levels_completed_count: 0.0

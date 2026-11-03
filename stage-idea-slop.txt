@@ -1,0 +1,13 @@
+HARD:
+      id: 26,
+      name: "Stage 26",
+      stageType: "flash",
+      rounds: 3,
+      cards: 2,
+      revealSeconds: 0.1,
+      recallSeconds: 15,
+      categories: ["numbers", "colors", "letters", "directions", "shapes"],
+      modifiers: {},
+      starTimes: { platinum: 5, gold: 6, silver: 12, bronze: 20 }
+
+    

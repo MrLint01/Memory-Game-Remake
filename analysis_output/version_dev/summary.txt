@@ -1,0 +1,12 @@
+Flash Recall Logging Analysis
+================================
+version_filter: dev
+sessions: 2
+unique_players: 1
+avg_session_minutes: 0.58
+retention_metric: attempts.time_seconds sum per session (strict gameplay-only)
+level_success_rate_percent:
+unique_players_for_level_hist: 1
+sandbox_players_percent: 0.00
+sandbox_players_count: 0
+sandbox_time_seconds_observed: n/a

@@ -1,0 +1,5 @@
+safari_players: 5
+non_safari_players: 55
+all_players: 60
+safari_avg_playtime_minutes: 1.41
+non_safari_avg_playtime_minutes: 1.67

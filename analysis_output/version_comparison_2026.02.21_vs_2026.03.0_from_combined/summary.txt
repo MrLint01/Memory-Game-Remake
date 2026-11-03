@@ -1,0 +1,16 @@
+Flash Recall Release Comparison
+==============================
+old_version: 2026.02.21
+new_version: 2026.03.0
+
+Comparison output: superimposed retention curves (highest level, levels completed count, time played)
+old_players: 57
+new_players: 34
+old_retention_levels_completed_2plus_pct: 38.60
+new_retention_levels_completed_2plus_pct: 47.06
+old_avg_playtime_minutes: 3.14
+new_avg_playtime_minutes: 4.22
+old_median_highest_level: 0.0
+new_median_highest_level: 1.0
+old_median_levels_completed_count: 0.0
+new_median_levels_completed_count: 1.0

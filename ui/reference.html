@@ -1,0 +1,170 @@
+<div class="modal" id="referenceModal" aria-hidden="true">
+  <div class="modal-card reference-card">
+    <div class="reference-header">
+      <h3>Reference Sheet</h3>
+      <div class="reference-note">Inputs are case-insensitive.</div>
+    </div>
+    <div class="reference-grid">
+      <div class="reference-block">
+        <h4>Card Types</h4>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Number</span>
+          <span class="ref-example">7</span>
+          <span class="ref-recall">Number</span>
+          <span class="ref-answer">Ans: 7</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Letter</span>
+          <span class="ref-example">B</span>
+          <span class="ref-recall">Letter</span>
+          <span class="ref-answer">Ans: B</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Greek Letter</span>
+          <span class="ref-example">α</span>
+          <span class="ref-recall">Greek letter</span>
+          <span class="ref-answer">Ans: Alpha / A / α</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Direction</span>
+          <span class="ref-example ref-arrow">
+            <img src="imgs/arrow.png" alt="" />
+          </span>
+          <span class="ref-recall">Direction</span>
+          <span class="ref-answer">Ans: Up / U / N
+          </span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Shape</span>
+          <span class="ref-example">
+            <svg class="shape-svg shape-svg--mini" viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="shape-stroke" cx="50" cy="50" r="28"></circle>
+            </svg>
+          </span>
+          <span class="ref-recall">Shape</span>
+          <span class="ref-answer">Ans: Circle / C</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Shape</span>
+          <span class="ref-example">
+            <svg class="shape-svg shape-svg--mini" viewBox="0 0 100 100" aria-hidden="true">
+              <rect class="shape-stroke" x="26" y="26" width="48" height="48"></rect>
+            </svg>
+          </span>
+          <span class="ref-recall">Shape</span>
+          <span class="ref-answer">Ans: Square / S / Rectangle / R</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Diagonal</span>
+          <span class="ref-example ref-diagonal">
+            <img src="imgs/arrow.png" alt="" />
+          </span>
+          <span class="ref-recall">Diagonal</span>
+          <span class="ref-answer">Ans: NE / NW / SE / SW</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Fruit</span>
+          <span class="ref-example ref-fruit">
+            <img src="imgs/apple.png" alt="" />
+          </span>
+          <span class="ref-recall">Fruit</span>
+          <span class="ref-answer">Ans: Apple / A</span>
+        </div>
+      </div>
+      <div class="reference-block">
+        <h4>Color Cards</h4>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Background Color</span>
+          <span class="ref-example ref-swatch" style="background:#f97316;">BLUE</span>
+          <span class="ref-recall">Background color</span>
+          <span class="ref-answer">Ans: Orange / O</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Text Color</span>
+          <span class="ref-example ref-swatch" style="background:#3b82f6;">BLUE</span>
+          <span class="ref-recall">Color text</span>
+          <span class="ref-answer">Ans: Blue / B</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Misleading</span>
+          <span class="ref-example ref-swatch" style="background:#22c55e;">PINK</span>
+          <span class="ref-recall">Text</span>
+          <span class="ref-answer">Ans: Pink / P</span>
+        </div>
+      </div>
+      <div class="reference-block">
+        <h4>Number Modifiers</h4>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Addition</span>
+          <span class="ref-example">9</span>
+          <span class="ref-recall">+ 2</span>
+          <span class="ref-answer">Ans: 11</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Subtraction</span>
+          <span class="ref-example">6</span>
+          <span class="ref-recall">- 1</span>
+          <span class="ref-answer">Ans: 5</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Multiplication</span>
+          <span class="ref-example">4</span>
+          <span class="ref-recall">* 2</span>
+          <span class="ref-answer">Ans: 8</span>
+        </div>
+      </div>
+      <div class="reference-block">
+        <h4>Other Modifiers</h4>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Pop-up</span>
+          <span class="ref-example ref-card ref-popup">
+            <span class="ref-popup-box">AD</span>
+            <span class="ref-popup-x">X</span>
+          </span>
+          <span class="ref-effect">Interferes visibility until closed.</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Fog</span>
+          <span class="ref-example ref-card ref-fog">7</span>
+          <span class="ref-effect">Move cursor around to clear fog.</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Blur</span>
+          <span class="ref-example ref-card ref-blur">
+            <span class="ref-blur-text">7</span>
+          </span>
+          <span class="ref-effect">Move cursor to reveal a clear spot.</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Glitch</span>
+          <span class="ref-example ref-card glitch glitch-animate">7</span>
+          <span class="ref-effect">Cards flicker to black.</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Platformer</span>
+          <span class="ref-example ref-card ref-platformer">
+            <span class="ref-platformer-ground"></span>
+            <span class="ref-platformer-player"></span>
+            <span class="ref-platformer-goal"></span>
+          </span>
+          <span class="ref-effect">Reach the goal before reveal ends.</span>
+        </div>
+        <div class="reference-row has-recall">
+          <span class="ref-label">Card Swap</span>
+          <span class="ref-example ref-card ref-swap ref-swap-animate">
+            <span class="ref-swap-card ref-swap-card--1">1</span>
+            <span class="ref-swap-card ref-swap-card--2">2</span>
+            <span class="ref-swap-card ref-swap-card--3">3</span>
+            <span class="ref-swap-card ref-swap-card--4">4</span>
+          </span>
+          <span class="ref-effect">Two cards swap positions.</span>
+        </div>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button id="referenceClose" class="secondary icon-button modal-close" type="button" aria-label="Close">
+        <img class="action-icon" src="imgs/x_button.png" alt="" />
+      </button>
+    </div>
+  </div>
+</div>

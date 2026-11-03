@@ -1,0 +1,9 @@
+Players who completed L1 but not L2: 8
+Players who completed L2 but not L3: 8
+Players who quit before level 1: 18
+Players who started level 1 but did not complete it: 17
+Players who completed level 1 and quit immediately: 6
+Players who completed level 1 and attempted level 2: 34
+Level 1 non-completers who quit mid-level: 3
+Level 1 non-completers who quit after 1 failure: 11
+Level 1 non-completers who quit after multiple failures: 3

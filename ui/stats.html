@@ -1,0 +1,78 @@
+<div class="modal" id="statsModal" aria-hidden="true">
+  <div class="modal-card modal-card--muted">
+    <button id="statsLeaderboardOpen" class="secondary icon-button stats-leaderboard-open" type="button" aria-label="Open leaderboards">
+      <img class="action-icon" src="imgs/leaderboard.png" alt="" />
+    </button>
+    <h3>Stats</h3>
+    <div class="controls">
+      <div class="control-group">
+        <label>Progress</label>
+        <div class="checkboxes">
+          <div class="stat-row">
+            <span>Stages cleared:</span>
+            <span class="stat-row__value-group">
+              <strong id="statsStagesCleared">0</strong>
+              <span class="stat-row__divider">/</span>
+              <strong id="statsStagesTotal">0</strong>
+            </span>
+          </div>
+          <div class="stat-row">
+            <span>Stars earned:</span>
+            <strong id="statsStarsEarned">0</strong>
+          </div>
+          <div class="stat-row">
+            <span>Total time spent:</span>
+            <strong id="statsTotalTimeSpent">-</strong>
+          </div>
+          <div class="stat-row">
+            <span>Achievements unlocked:</span>
+            <span class="stat-row__value-group">
+              <strong id="statsAchievementsUnlocked">0</strong>
+              <span class="stat-row__divider">/</span>
+              <strong id="statsAchievementsTotal">0</strong>
+            </span>
+          </div>
+        </div>
+      </div>
+      <hr class="stat-divider" />
+      <div class="control-group">
+        <label>Performance</label>
+        <div class="checkboxes">
+          <div class="stat-row">Avg time per card: <strong id="statsAvgPerCard">-</strong></div>
+          <div class="stat-row">Avg best time per card: <strong id="statsAvgBestPerCard">-</strong></div>
+          <div class="stat-row">Level attempts: <strong id="statsLevelAttempts">0</strong></div>
+          <div class="stat-row">Level success rate: <strong id="statsLevelSuccessRate">-</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button id="statsClose" class="secondary icon-button modal-close" type="button" aria-label="Close">
+        <img class="action-icon" src="imgs/x_button.png" alt="" />
+      </button>
+    </div>
+    </div>
+</div>
+
+<div class="modal modal--leaderboard" id="statsLeaderboardModal" aria-hidden="true">
+  <div class="modal-card modal-card--muted">
+    <h3 id="statsLeaderboardTitle">Leaderboard</h3>
+    <div class="stats-leaderboard-tabs" role="tablist" aria-label="Stats leaderboard tabs">
+      <button id="statsLeaderboardTabStars" class="stats-leaderboard-tab is-active" type="button" role="tab" aria-selected="true" data-stats-leaderboard-tab="stars_earned">Stars</button>
+      <button id="statsLeaderboardTabStages" class="stats-leaderboard-tab" type="button" role="tab" aria-selected="false" data-stats-leaderboard-tab="stages_cleared">Stages cleared</button>
+      <button id="statsLeaderboardTabAchievements" class="stats-leaderboard-tab" type="button" role="tab" aria-selected="false" data-stats-leaderboard-tab="achievements_unlocked">Achievements</button>
+    </div>
+    <div class="leaderboard-list" id="statsLeaderboardModalList">
+      <div class="leaderboard-row">
+        <span>#</span>
+        <span>Player</span>
+        <span>Value</span>
+      </div>
+      <div class="leaderboard-row leaderboard-row--empty" id="statsLeaderboardModalEmpty">Loading...</div>
+    </div>
+    <div class="modal-actions">
+      <button id="statsLeaderboardClose" class="secondary icon-button modal-close" type="button" aria-label="Close">
+        <img class="action-icon" src="imgs/x_button.png" alt="" />
+      </button>
+    </div>
+  </div>
+</div>

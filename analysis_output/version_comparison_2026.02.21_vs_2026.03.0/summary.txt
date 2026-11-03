@@ -1,0 +1,38 @@
+Flash Recall Release Comparison
+==============================
+old_version: 2026.02.21
+new_version: 2026.03.0
+
+Comparison output: superimposed retention curves (highest level, levels completed count, time played)
+old_players: 43
+new_players: 37
+old_retention_levels_completed_2plus_pct: 44.19
+new_retention_levels_completed_2plus_pct: 48.65
+old_avg_playtime_minutes: 4.01
+new_avg_playtime_minutes: 3.71
+old_median_highest_level: 1.0
+new_median_highest_level: 1.0
+old_median_levels_completed_count: 1.0
+new_median_levels_completed_count: 1.0
+
+Level 1 feature bar chart definitions:
+- started_level_1 = player has a level_start event for level 1
+- started_level_1_then_clicked_button = player started level 1, then later had a level-1 ui_interaction click event
+- autoplayed_into_level_1 = player has a level-1 autoplay event with auto preview start
+level_1_feature_bar_chart: level_1_feature_bar_comparison.png
+old_started_level_1_pct: 65.12
+new_started_level_1_pct: 89.19
+old_started_level_1_then_clicked_button_pct: 0.00
+new_started_level_1_then_clicked_button_pct: 0.00
+old_autoplayed_into_level_1_pct: 0.00
+new_autoplayed_into_level_1_pct: 0.00
+old_adaptive_unassigned_players: 0
+old_adaptive_b_players: 0
+old_adaptive_a_players: 0
+new_adaptive_unassigned_players: 4
+new_adaptive_b_players: 19
+new_adaptive_a_players: 4
+adaptive_time_comparison_graph: adaptive_group_retention_by_time_comparison.png
+adaptive_time_comparison_by_group_graph: adaptive_group_retention_by_time_comparison_by_group.png
+adaptive_time_all_players_comparison_graph: adaptive_group_retention_by_time_all_players_comparison.png
+adaptive_time_all_players_comparison_by_group_graph: adaptive_group_retention_by_time_all_players_comparison_by_group.png

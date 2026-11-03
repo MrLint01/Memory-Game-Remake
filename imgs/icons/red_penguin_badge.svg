@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Red Penguin">
+  <circle cx="64" cy="64" r="58" fill="#b91c1c"/>
+  <ellipse cx="64" cy="69" rx="34" ry="39" fill="#1f2937"/>
+  <ellipse cx="64" cy="74" rx="22" ry="27" fill="#f8fafc"/>
+  <circle cx="53" cy="60" r="5.5" fill="#f8fafc"/>
+  <circle cx="75" cy="60" r="5.5" fill="#f8fafc"/>
+  <circle cx="53" cy="60" r="2.2" fill="#111827"/>
+  <circle cx="75" cy="60" r="2.2" fill="#111827"/>
+  <path d="M64 66l9 7H55z" fill="#f97316"/>
+  <path d="M47 102l10-8 7 11H47z" fill="#f59e0b"/>
+  <path d="M81 102l-10-8-7 11h17z" fill="#f59e0b"/>
+  <path d="M30 34l18-10-2 19z" fill="#ef4444" opacity=".95"/>
+  <path d="M36 40h27" stroke="#fecaca" stroke-width="6" stroke-linecap="round"/>
+</svg>

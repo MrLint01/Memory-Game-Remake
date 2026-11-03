@@ -1,0 +1,135 @@
+up right down left arrow input
+shuffle cards, so ordering matters
+text color/font color
+
+asdasdas
+
+
+Stages/Levels -> 3 Stars, time based
+
+
+
+transform: translateY(-1%);
+
+level_attempt
+card_result
+scroll
+user_engagement
+page_view	
+card_guessed_correctly
+level_session
+session_start
+attempted_level
+level_completion_details
+
+you get data in batches
+    - record page hits
+    - different frequencies
+    - tracking progression within level is very hard.
+    
+Fill out the form is outlier.
+    - 
+    
+
+Color Text 
+Delete some levels in between, since 2 palytesters felt a little slow in difficulty progression. 
+Rotation Modifiers for directions. 
+For diagonal Modifier press double "arrows", like press one arrow + another. 
+
+
+Between each published version of the game, you must give a presentation explaining what you changed or improved based on real-life data.
+
+- Expect to give three presentations.
+- A common issue is that everyone gets out of sync because of the release-and-work cycle.
+- Distribute the presentations evenly over time.
+- Do not miss class, even if you do not have anything to present.
+
+---
+
+In addition, there are two required concepts:
+
+
+1. A/B Testing (Multi-Variant Study)
+
+You need to conduct some kind of A/B test.
+
+- Release a new version that randomly sends players to one URL and others to a different URL.
+- Analyze which version has better retention.
+- You cannot control who visits the website, so the population must be randomized.
+- This is useful when it is unclear which version is better.
+- At least one of the four releases must include an A/B study.
+- The comparison must clearly distinguish between the two versions.
+
+
+2. Build a Player Model (Adaptive Game Design)
+
+Create a "player model" based on how players perform initially.
+
+- Try to increase play time by adjusting levels to match the player model.
+- Some players clear stages quickly, while others progress more slowly.
+- Set a threshold to categorize players.
+- For example, create a “grandma version” (an easier, adaptive version) instead of a static version that is the same for everyone.
+- If novice players play longer on the adaptive version compared to the static version, that is considered a success.
+- Determine which group is most responsive ("swayable") to changes.
+- Identify whether a particular audience plays longer after adjustments.
+
+These two types of analytics must be included somewhere in the four releases.
+
+---
+
+Retention Analysis
+- Create a Time/Level vs. Retention graph.
+- If players continue to later levels, that means you succeeded.
+- Analyze different subsets of players.
+    - Some players may have higher retention.
+    - Some may finish the tutorial.
+    - Others may quit immediately.
+- Adapt the game to target the group that lowers the overall average retention the most.
+- Improve the experience for players who drop out during the tutorial.
+
+---
+
+Graph Expectations
+1. Graphs should help you decide what to change in the next iteration.
+2. You should include clear visualizations to support your conclusions.
+
+Design Considerations
+- Instead of introducing difficult modifiers or cards too quickly, consider adjusting the timing (introduce them earlier or later).
+- Allowing players to choose “Easy,” “Medium,” or “Hard” is usually a bad idea because most people overestimate their ability.
+- Letting players manually adjust difficulty can negatively affect engagement.
+
+Game Theory Example: Stars
+- In large-scale analysis, when comparing versions with stars vs. without stars (where stars are not required):
+    1. Players played less when stars were included.
+    2. Forcing players to play in one specific way reduces engagement.
+
+Release Cycle:
+- Release → Log Data → Analyze → Identify Issues/Changes → Presentation (Explain planned changes)
+- There should be one new presentation for each release.
+- You are successful when you clearly address issues identified in the previous data analysis.
+
+
+
+
+Betwen every publishing game version, make a presentation what you changed/imporved based on the real life data
+    - Expect to have 3 presentations
+    - Often happens: Everyone gets out of sync. Becuase of cycle of release + work. 
+    - Distribute prsentation by some amount. 
+    - Do not miss class even if you dont have anything to present.
+    - In addition to this: Two concepts
+        1. You need to do some kind of multi-varied study A/B study. Release a new version that randomly sends the player to one url and another to a different url. Basically analyze which retention is better. We can't do this seperately since you cannot control who comes to the websites. Random population. Since we need it to be randomized population. Useful to have when we don't know "which" version is better. Ambiguous. One of the 4 releases to have a A/B study. You need to have a clear discrimination. 
+        2. Build a "players model" based on how they play initially. Try to increse the play time by adjusting the levels that match that "player model". Some people might easily clear the stage "fast" but others "slower". Have some sort of freshhold. For example make a "grandma version" of the game, adaptive version of the game, rather than a "Static" version of the game (same for every person). If a "novice" players played longer on the "grandma version" compared to the "static version" it's a sucsess. How to determine the best group to descriminate. We want to see is there a particulr "swayable" audience that when we change something it gets them to play longer. 
+    - These two types of analytics needs to be somewhere in the four releases.
+    - Time/Level vs retention graph. If you get players to "stick" to the further levels, you succeeded. ANalyze the different subset of people. Some people might have a further retention to your game compared to other subset of people. One might stick on to the entire tutorial while the other might quit immedietly. You need to adapt to the subset of people that brings more people onto the game, make changes on the game for the people that didnt stick onto the entire "tutorial" stages. Get the players who "drags the whole avergae the most" to play the game longer. 
+    - What graphs are expected?
+        1. Graphs are for you to know what to do for the next iteration. Help you draw the best conclusions
+        2. You should have a graph 
+    - For example rather than introducting modifiers/cards that is noticably hard very quickly, you can consider introducing when faster/slower. 
+    - You can make the game play on "Easy" "Medium" or "Hard" almost everybody over estimates. Its a bad idea. If you let them intentionally get them to "adjust" the difficulty, its bad. 
+    - Game theory: Stars. When we did large scale analysis, with stars vs w/o where stars are not required, what happens is that -> People play less on games where there are stars. 
+    - You are forcing one to play "one way". Release -> Log Data -> Analysis -> Find Issues/Changes -> Presentation (How you want to change). Every release one new presentation. 
+    - You are successful when you address issues from the previous data analysis. 
+
+
+
+num rnds.	num crds.	numbers	colors	letters	direction	shapes	diagonal	maths ops	background color	misleading colors	text color

@@ -1,0 +1,31 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const assert = require('node:assert/strict');
+const root = path.join(__dirname, '..');
+const source = fs.readFileSync(path.join(root, 'app-core.js'), 'utf8');
+const start = source.indexOf('        const getCategoryPool =');
+const end = source.indexOf('        const allowDuplicates =', start);
+const context = { targetCount: 1, roundItemsBase: [] };
+vm.createContext(context);
+vm.runInContext(fs.readFileSync(path.join(root, 'data.js'), 'utf8'), context);
+vm.runInContext(source.slice(start, end) + '\nglobalThis.pool = getCategoryPool;', context);
+const all = vm.runInContext('dataSets.aminoAcids', context);
+for (const previous of all) {
+  context.roundItemsBase = [{ ...previous, category: 'aminoAcids' }];
+  const pool = context.pool('aminoAcids');
+  assert.equal(pool.length, 19);
+  assert.ok(pool.every(entry => entry.label !== previous.label));
+  assert.equal(all.length, 20);
+}
+context.targetCount = 4;
+assert.equal(context.pool('aminoAcids'), all);
+context.targetCount = 1;
+context.roundItemsBase = [];
+assert.equal(context.pool('aminoAcids'), all);
+context.roundItemsBase = [{ category: 'numbers', label: '1' }];
+assert.equal(context.pool('aminoAcids'), all);
+context.roundItemsBase = [{ category: 'aminoAcids', label: all[0].label }];
+vm.runInContext('dataSets.aminoAcids = [dataSets.aminoAcids[0]]', context);
+assert.equal(context.pool('aminoAcids').length, 1);
+console.log('All 20 amino acids exclude the previous single card; first rounds, multi-card rounds, and one-item pools remain valid.');

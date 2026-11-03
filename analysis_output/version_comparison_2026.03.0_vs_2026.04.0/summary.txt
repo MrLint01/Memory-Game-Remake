@@ -1,0 +1,48 @@
+Flash Recall Release Comparison
+==============================
+old_version: 2026.03.0
+new_version: 2026.04.0
+
+Comparison output: superimposed retention curves plus level-1 onboarding/flow and early-completion grouped bars
+old_players: 37
+new_players: 79
+old_retention_levels_completed_2plus_pct: 48.65
+new_retention_levels_completed_2plus_pct: 43.04
+old_avg_playtime_minutes: 3.71
+new_avg_playtime_minutes: 1.83
+old_median_highest_level: 1.0
+new_median_highest_level: 1.0
+old_median_levels_completed_count: 1.0
+new_median_levels_completed_count: 1.0
+
+Level 1 feature bar chart definitions:
+- started_level_1 = player has any evidence of entering level 1 (attempt row, level_start, level_end, round_complete, or first-level autoplay entry)
+- interacted_level_1 = player started level 1 and then reached a level-1 round_complete event, whether that round ended in success or failure
+level_1_feature_bar_chart: level_1_feature_bar_comparison.png
+old_started_level_1_pct: 89.19
+new_started_level_1_pct: 89.33
+old_interacted_level_1_pct: 75.68
+new_interacted_level_1_pct: 74.67
+level_1_onboarding_funnel_chart: level_1_onboarding_funnel_comparison.png
+old_completed_level_1_pct: 62.16
+new_completed_level_1_pct: 53.33
+old_attempted_level_2_pct: 51.35
+new_attempted_level_2_pct: 45.33
+early_level_completion_chart: early_level_completion_comparison.png
+old_completed_level_3_pct: 45.95
+new_completed_level_3_pct: 32.00
+level_1_player_flow_chart: level_1_player_flow_comparison.png
+old_quit_before_l1_pct: 29.73
+new_quit_before_l1_pct: 24.00
+old_started_l1_quit_before_finish_pct: 8.11
+new_started_l1_quit_before_finish_pct: 22.67
+old_adaptive_unassigned_players: 4
+old_adaptive_b_players: 19
+old_adaptive_a_players: 4
+new_adaptive_unassigned_players: 6
+new_adaptive_b_players: 39
+new_adaptive_a_players: 14
+adaptive_time_comparison_graph: adaptive_group_retention_by_time_comparison.png
+adaptive_time_comparison_by_group_graph: adaptive_group_retention_by_time_comparison_by_group.png
+adaptive_time_all_players_comparison_graph: adaptive_group_retention_by_time_all_players_comparison.png
+adaptive_time_all_players_comparison_by_group_graph: adaptive_group_retention_by_time_all_players_comparison_by_group.png

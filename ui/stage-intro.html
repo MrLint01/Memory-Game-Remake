@@ -1,0 +1,34 @@
+<div class="modal" id="stageIntroModal" aria-hidden="true">
+  <div class="modal-card modal-card--intro">
+    <button id="stageIntroClose" class="secondary icon-button stage-intro-close modal-close" type="button" aria-label="Close">
+      <img class="action-icon" src="imgs/x_button.png" alt="" />
+    </button>
+    <button id="stageIntroPrev" class="stage-intro-nav stage-intro-nav--prev" type="button" aria-label="Previous stage preview"></button>
+    <button id="stageIntroNext" class="stage-intro-nav stage-intro-nav--next" type="button" aria-label="Next stage preview"></button>
+    <button id="leaderboardOpen" class="secondary icon-button leaderboard-open" type="button" aria-label="Open leaderboard">
+      <img class="action-icon" src="imgs/leaderboard.png" alt="" />
+    </button>
+    <div class="stage-intro-shell">
+      <div class="stage-intro-header">
+        <h3 id="stageIntroTitle">Stage</h3>
+        <div class="stage-intro-stars-wrap">
+          <div class="stage-intro-stars" id="stageIntroStars" aria-hidden="true"></div>
+          <div class="stage-intro-best" id="stageIntroBest">Best: —</div>
+        </div>
+      </div>
+      <div class="stage-intro-stats" id="stageIntroSubtitle"></div>
+      <div class="stage-intro-icons" id="stageIntroList"></div>
+    </div>
+    <div class="modal-actions">
+      <div class="stage-intro-start-wrap">
+        <div class="stage-intro-start-timer" aria-hidden="true">
+          <span class="stage-intro-start-timer__fill"></span>
+        </div>
+        <button id="stageIntroStart" class="icon-button stage-intro-start" type="button" aria-label="Start">
+          <img class="action-icon" src="imgs/play_button.png" alt="" />
+          <span class="action-key-hint" aria-hidden="true">(Enter)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

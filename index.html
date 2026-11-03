@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flash Recall</title>
+    <style>
+      body[data-view="splash"] .layout,
+      body[data-view="splash"] .stages-screen,
+      body[data-view="splash"] header {
+        display: none !important;
+      }
+      body[data-view="splash"] #splashScreen {
+        display: flex !important;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css?v=20261030-amino-types" />
+    <link rel="stylesheet" href="viewport-layout.css?v=20261030-amino-mode" />
+    <link rel="preload" href="imgs/back_button.png" as="image" />
+    <link rel="preload" href="imgs/chain_1.png" as="image" />
+    <link rel="preload" href="imgs/chain_2.png" as="image" />
+    <link rel="preload" href="imgs/chain_3.png" as="image" />
+    <link rel="preload" href="imgs/chain_4.png" as="image" />
+    <link rel="preload" href="imgs/chain_5.png" as="image" />
+    <link rel="preload" href="imgs/flash_icon.png" as="image" />
+    <link rel="preload" href="imgs/fullscreen_button.png" as="image" />
+    <link rel="preload" href="imgs/info.png" as="image" />
+    <link rel="preload" href="imgs/apple.png" as="image" />
+    <link rel="preload" href="imgs/banana.png" as="image" />
+    <link rel="preload" href="imgs/grape.png" as="image" />
+    <link rel="preload" href="imgs/strawberry.png" as="image" />
+    <link rel="preload" href="imgs/watermelon.png" as="image" />
+    <link rel="preload" href="imgs/home_button.png" as="image" />
+    <link rel="preload" href="imgs/menu_button.png" as="image" />
+    <link rel="preload" href="imgs/next_button.png" as="image" />
+    <link rel="preload" href="imgs/play_button.png" as="image" />
+    <link rel="preload" href="imgs/reference_button.png" as="image" />
+    <link rel="preload" href="imgs/arrow.png" as="image" />
+    <link rel="preload" href="imgs/icons/card-numbers.svg" as="image" />
+    <link rel="preload" href="imgs/icons/card-letters.svg" as="image" />
+    <link rel="preload" href="imgs/icons/card-colors.svg" as="image" />
+    <link rel="preload" href="imgs/icons/card-directions.svg" as="image" />
+    <link rel="preload" href="imgs/icons/card-diagonal.svg" as="image" />
+    <link rel="preload" href="imgs/icons/card-shapes.svg" as="image" />
+    <link rel="preload" href="imgs/icons/sequence-icon.svg" as="image" />
+    <link rel="preload" href="imgs/retry_button.png" as="image" />
+    <link rel="preload" href="imgs/settings_button.png" as="image" />
+    <link rel="preload" href="imgs/stat_button.png" as="image" />
+    <link rel="preload" href="imgs/tutorial_icon.png" as="image" />
+    <link rel="preload" href="imgs/x_button.png" as="image" />
+    <link rel="preload" href="imgs/icons/mod-ads.svg" as="image" />
+    <link rel="preload" href="imgs/icons/mod-backgroundcolor.svg" as="image" />
+    <link rel="preload" href="imgs/icons/mod-fog.svg" as="image" />
+    <link rel="preload" href="imgs/icons/mod-blur.svg" as="image" />
+    <link rel="preload" href="imgs/icons/mod-glitch.svg" as="image" />
+    <link rel="preload" href="imgs/icons/mod-mathops.svg" as="image" />
+    <link rel="preload" href="imgs/icons/mod-misleadcolors.svg" as="image" />
+    <link rel="preload" href="imgs/icons/mod-textcolor.svg" as="image" />
+    <link rel="preload" href="imgs/icons/mod-previouscard.svg" as="image" />
+    <link rel="preload" href="imgs/icons/mod-platformer.svg" as="image" />
+    <link rel="preload" href="imgs/icons/mod-swapcards.svg" as="image" />
+    <link rel="preload" href="imgs/icons/mod-sequence.svg" as="image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+      rel="stylesheet" media="print" onload="this.media='all'"
+    />
+    <script>
+      (function () {
+        try {
+          if (sessionStorage.getItem("flashRecallSkipInitialLoading") === "1") {
+            document.documentElement.classList.add("skip-initial-loading");
+          }
+        } catch (error) {}
+      })();
+    </script>
+    <style>
+      body.loading-overlay #splashScreen {
+        display: none;
+      }
+      body.loading-overlay main {
+        display: none;
+      }
+      body.initial-loading .splash-screen,
+      body.initial-loading .splash-title,
+      body.initial-loading .splash-message,
+      body.initial-loading .splash-title::before,
+      body.initial-loading .splash-title::after,
+      body.initial-loading .splash-title__shine {
+        animation: none !important;
+      }
+    </style>
+  </head>
+  <body class="loading-overlay initial-loading" data-state="idle" data-mode="practice" data-view="loading" data-theme="classic" data-layout="classic">
+    <script>
+      (function () {
+        if (!document.documentElement.classList.contains("skip-initial-loading")) return;
+        document.body.classList.remove("loading-overlay");
+        document.body.classList.remove("initial-loading");
+        document.body.dataset.view = "splash";
+        try {
+          sessionStorage.removeItem("flashRecallSkipInitialLoading");
+        } catch (error) {}
+      })();
+    </script>
+    <div class="viewport-frame" id="viewportFrame">
+    <main>
+      <header>
+        <div class="title-wrap" id="mainMenuTitle">
+          <div class="title-cards" aria-hidden="true">
+            <span class="title-card card-a"></span>
+            <span class="title-card card-b"></span>
+            <span class="title-card card-c"></span>
+          </div>
+          <h1 class="title" data-text="Flash Recall">
+            <span class="title__text">Flash Recall</span>
+            <span class="title__shine" aria-hidden="true">Flash Recall</span>
+          </h1>
+        </div>
+      </header>
+      <section class="splash-screen" id="splashScreen" aria-hidden="true" hidden>
+        <h1 class="splash-title" data-text="Flash Recall">
+          <span class="splash-title__text">Flash Recall</span>
+          <span class="splash-title__shine" aria-hidden="true">Flash Recall</span>
+        </h1>
+        <div class="splash-message" role="status">Press Any Key to Start</div>
+        <div class="splash-autostart" id="splashAutoStartMessage" aria-live="polite" hidden>
+          Starting in 5.0
+        </div>
+      </section>
+      <section class="layout">
+        <aside class="panel">
+          <div class="controls">
+            <div class="mode-grid">
+              <button id="stagesOpen" class="mode-card" type="button">
+                <strong>Levels</strong>
+              </button>
+              <button id="practiceStart" class="mode-card" type="button">
+                <strong>Sandbox</strong>
+              </button>
+              <button id="aminoAcidsStart" class="mode-card" type="button">
+                <strong>Amino Acids</strong>
+              </button>
+            </div>
+            <div class="quick-actions">
+              <button id="settingsOpen" class="quick-action icon-button" type="button" aria-label="Open settings">
+                <img class="action-icon" src="imgs/settings_button.png" alt="" />
+              </button>
+              <button id="statsOpen" class="quick-action icon-button" type="button" aria-label="Open stats">
+                <img class="action-icon" src="imgs/stat_button.png" alt="" />
+              </button>
+              <button id="achievementsOpen" class="quick-action icon-button" type="button" aria-label="Open achievements">
+                <img class="action-icon" src="imgs/icons/acheivements.svg" alt="" />
+                <span class="action-glyph action-glyph--stars" aria-hidden="true">
+                  <span class="action-glyph__star">✦</span>
+                  <span class="action-glyph__star">✦</span>
+                  <span class="action-glyph__star">✦</span>
+                </span>
+              </button>
+              <button id="creditsOpen" class="quick-action quick-action--square" type="button" aria-label="Credits">
+                <img class="action-icon" src="imgs/info.png" alt="" />
+              </button>
+              <button id="fullscreenToggle" class="quick-action quick-action--square icon-button" type="button" aria-label="Toggle fullscreen">
+                <img class="action-icon" src="imgs/fullscreen_button.png" alt="" />
+              </button>
+            </div>
+          </div>
+        </aside>
+        <section class="stage panel">
+          <div class="timer-bar" id="timerBar">
+            <div class="timer-bar__fill" id="timerFill"></div>
+          </div>
+          <div class="memory-field" id="memoryField">
+            <div class="memory-workspace" id="memoryWorkspace">
+              <section class="memory-cards-panel">
+                <h2>Cards</h2>
+                <p class="memory-cards-status" id="memoryCardsStatus"></p>
+                <div class="cards" id="cardGrid"></div>
+                <div class="prompts" id="promptGrid"></div>
+                <div class="inputs" id="inputGrid"></div>
+              </section>
+              <div id="memoryChallenges" hidden></div>
+            </div>
+          </div>
+          <footer class="game-footer" id="gameFooter">
+            <button class="controls-handle" id="controlsHandle" type="button" aria-label="Show game controls" aria-controls="gameFooterContent" aria-expanded="false"></button>
+            <div class="game-footer-content" id="gameFooterContent">
+              <div class="game-hud">
+                <div class="hud-cluster" id="hudCluster">
+                  <div class="pill hud-timer" id="stageTimerHud">Time 0.00</div>
+                  <div class="pill hud-round" id="roundPill">Round 0</div>
+                </div>
+                <div class="pill hud-streak" id="streakPill">STREAK 0</div>
+              </div>
+              <div class="memory-round-controls" id="memoryRoundControls" hidden>
+                <button type="button">Answer all · Enter</button>
+              </div>
+              <div class="platformer panel" id="platformerPanel">
+                <div class="platformer-header">Platformer</div>
+                <canvas id="platformerCanvas" width="900" height="160"></canvas>
+              </div>
+              <div class="actions"></div>
+              <div class="results" id="resultsPanel"></div>
+            </div>
+          </footer>
+        </section>
+        <section class="stage-instruction-panel" id="stageInstructionPanel" aria-hidden="true">
+          <div class="stage-instructions" id="stageInstructions" aria-hidden="true"></div>
+        </section>
+      </section>
+      <section class="stages-screen" id="stagesScreen" aria-hidden="true">
+        <div class="stages-hero">
+          <button id="stagesBack" class="quick-action icon-button" type="button" aria-label="Home">
+            <img class="action-icon" src="imgs/home_button.png" alt="" />
+          </button>
+          <div class="stages-summary">
+            <div class="stages-progress" id="stagesProgress" aria-live="polite"></div>
+            <div class="stages-total" id="stagesTotal" aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="stage-board">
+          <div class="stage-list stage-grid" id="stageList"></div>
+        </div>
+        <button id="stagesPrev" class="stages-page-prev" type="button" aria-label="Previous page"></button>
+        <button id="stagesNext" class="stages-page-next" type="button" aria-label="Next page"></button>
+        <div class="stages-footer">
+          <div id="stagesFooter"></div>
+        </div>
+      </section>
+    </main>
+    </div>
+    <section class="splash-loading" id="splashLoading" aria-hidden="false">
+      <div class="splash-loading__text">Loading…</div>
+      <div class="splash-loading__bar" aria-hidden="true"><span></span></div>
+    </section>
+    <div class="modal" id="practiceModal" aria-hidden="true">
+      <div class="modal-card modal-card--sandbox">
+        <div class="sandbox-header">
+          <h3>Sandbox Settings</h3>
+        </div>
+        <div class="controls">
+          <div class="control-row settings-row">
+            <div class="stat-field">
+              <label for="revealTime">Reveal (s)</label>
+              <input id="revealTime" type="number" min="2" max="20" step="1" value="20" />
+            </div>
+            <div class="stat-field">
+              <label for="recallTime">Recall (s)</label>
+              <input id="recallTime" type="number" min="5" max="30" step="1" value="20" />
+            </div>
+            <div class="stat-field">
+              <label for="cardCount">Cards</label>
+              <input id="cardCount" type="number" min="1" max="10" step="1" value="4" />
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="control-row">
+              <label>Card types</label>
+              <div class="control-actions">
+                <button id="practiceSelectAll" class="link-button" type="button">Select all</button>
+                <button id="practiceDeselectAll" class="link-button" type="button">Deselect all</button>
+              </div>
+            </div>
+            <div class="practice-error practice-error--floating" id="practiceTypeError" aria-live="polite" hidden>
+              Select at least one card type to start Sandbox.
+            </div>
+            <div class="checkboxes icon-choices">
+              <label class="icon-choice">
+                <input type="checkbox" value="numbers" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/card-numbers.svg" alt="" />
+                  <span>Numbers</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input type="checkbox" value="colors" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/card-colors.svg" alt="" />
+                  <span>Colors</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input type="checkbox" value="letters" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/card-letters.svg" alt="" />
+                  <span>Letters</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input type="checkbox" value="greekLetters" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/card-greekletters.svg" alt="" />
+                  <span>Greek letters</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input type="checkbox" value="directions" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/card-directions.svg" alt="" />
+                  <span>Directions</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input type="checkbox" value="diagonal" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/card-diagonal.svg" alt="" />
+                  <span>Diagonal</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input type="checkbox" value="shapes" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/card-shapes.svg" alt="" />
+                  <span>Shapes</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input type="checkbox" value="fruits" />
+                <span class="icon-tile">
+                  <img src="imgs/apple.png" alt="" />
+                  <span>Fruits</span>
+
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="control-group">
+            <label>Modifiers</label>
+            <div class="checkboxes icon-choices">
+              <label class="icon-choice">
+                <input id="practiceMathOps" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-mathops.svg" alt="" />
+                  <span>Math ops</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practiceMathOpsPlus" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-mathopsplus.svg" alt="" />
+                  <span>Math ops+</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practiceMisleadColors" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-misleadcolors.svg" alt="" />
+                  <span>Mislead</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practiceBackgroundColor" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-backgroundcolor.svg" alt="" />
+                  <span>Background</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practiceTextColor" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-textcolor.svg" alt="" />
+                  <span>Text color</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practicePreviousCard" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-previouscard.svg" alt="" />
+                  <span>Previous</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practiceSwap" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-swapcards.svg" alt="" />
+                  <span>Swap</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practicePlatformer" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-platformer.svg" alt="" />
+                  <span>Platformer</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practiceGlitch" type="checkbox" />
+                <span class="icon-tile">
+                  <svg class="glitch-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">
+                    <rect class="glitch-card-fill" x="6" y="6" width="52" height="52" rx="8" fill="#ffffff" stroke="#111111" stroke-width="3"/>
+                    <text x="32" y="42" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="28" fill="#111">7</text>
+                  </svg>
+                  <span>Glitch</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practiceRotate" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-rotate.svg" alt="" />
+                  <span>Rotate</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practiceRotatePlus" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-rotateplus.svg" alt="" />
+                  <span>Rotate+</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practiceSequence" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-sequence.svg" alt="" />
+                  <span>Sequence</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practiceFog" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-fog.svg" alt="" />
+                  <span>Fog</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practiceBlur" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-blur.svg" alt="" />
+                  <span>Blur</span>
+
+                </span>
+              </label>
+              <label class="icon-choice">
+                <input id="practiceAds" type="checkbox" />
+                <span class="icon-tile">
+                  <img src="imgs/icons/mod-ads.svg" alt="" />
+                  <span>Ads</span>
+
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button id="practiceCancel" class="secondary icon-button practice-close" type="button" aria-label="Back">
+            <img class="action-icon" src="imgs/x_button.png" alt="" />
+          </button>
+          <button id="practiceConfirm" class="icon-button practice-start" type="button" aria-label="Start Sandbox">
+            <img class="action-icon" src="imgs/play_button.png" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="aminoAcidsModal" aria-hidden="true">
+      <form class="modal-card modal-card--amino" id="aminoAcidsForm" role="dialog" aria-modal="true" aria-labelledby="aminoAcidsTitle">
+        <div class="sandbox-header">
+          <h3 id="aminoAcidsTitle">Amino Acids</h3>
+        </div>
+        <div class="control-row settings-row">
+          <div class="stat-field">
+            <label for="aminoRevealTime">Study</label>
+            <div class="amino-value">
+              <input id="aminoRevealTime" type="number" min="2" max="20" step="1" value="20" aria-label="Study time in seconds" required />
+              <span class="amino-unit" aria-hidden="true">s</span>
+            </div>
+          </div>
+          <div class="stat-field">
+            <label for="aminoRecallTime">Answer</label>
+            <div class="amino-value">
+              <input id="aminoRecallTime" type="number" min="5" max="30" step="1" value="20" aria-label="Answer time in seconds" required />
+              <span class="amino-unit" aria-hidden="true">s</span>
+            </div>
+          </div>
+          <div class="stat-field">
+            <label for="aminoCardCount">Cards</label>
+            <input id="aminoCardCount" type="number" min="1" max="20" step="1" value="1" required />
+          </div>
+        </div>
+        <fieldset class="control-group amino-answer-setting">
+          <legend>Answers</legend>
+          <div class="checkboxes icon-choices amino-format-choices" id="aminoAnswerFormats">
+            <label class="icon-choice">
+              <input type="checkbox" name="aminoAnswerFormats" value="label" aria-label="Full name" checked />
+              <span class="icon-tile"><span class="amino-format-example" aria-hidden="true">Lysine</span><span>Name</span></span>
+            </label>
+            <label class="icon-choice">
+              <input type="checkbox" name="aminoAnswerFormats" value="threeLetterCode" aria-label="Three-letter code" />
+              <span class="icon-tile"><span class="amino-format-example" aria-hidden="true">Lys</span><span>3 letters</span></span>
+            </label>
+            <label class="icon-choice">
+              <input type="checkbox" name="aminoAnswerFormats" value="oneLetterCode" aria-label="One-letter code" />
+              <span class="icon-tile"><span class="amino-format-example" aria-hidden="true">K</span><span>1 letter</span></span>
+            </label>
+            <label class="icon-choice">
+              <input type="checkbox" name="aminoAnswerFormats" value="sideChainType" aria-label="Side-chain type" />
+              <span class="icon-tile"><span class="amino-format-example" aria-hidden="true">Basic</span><span>Type</span></span>
+            </label>
+          </div>
+          <p class="amino-format-error" id="aminoAnswerFormatError" role="alert" hidden>Select a format.</p>
+        </fieldset>
+        <div class="modal-actions">
+          <button id="aminoAcidsCancel" class="secondary icon-button" type="button" aria-label="Back">
+            <img class="action-icon" src="imgs/x_button.png" alt="" />
+          </button>
+          <button id="aminoAcidsConfirm" class="amino-start" type="submit" aria-label="Start Amino Acids">
+            <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2 14 8 4 14Z" fill="currentColor" /></svg>
+            <span>Start</span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div data-include="ui/settings.html"></div>
+    <div data-include="ui/player-name.html"></div>
+    <div data-include="ui/leaderboard.html"></div>
+    <div data-include="ui/stats.html"></div>
+    <div data-include="ui/achievements.html"></div>
+    <div data-include="ui/stage-intro.html"></div>
+    <div data-include="ui/reference.html"></div>
+    <div data-include="ui/credits.html"></div>
+    <div class="modal" id="contentResetModal" aria-hidden="true">
+      <div class="modal-card modal-card--muted modal-card--reset-notice">
+        <button class="interrupt-close icon-button modal-close" id="contentResetClose" type="button" aria-label="Close">
+          <img class="action-icon" src="imgs/x_button.png" alt="" />
+        </button>
+        <h3 id="contentResetTitle">Hey Player!</h3>
+        <div class="content-reset-copy" id="contentResetCopy">
+          <p>Due to updates in game levels we have reset your progress on in Flash Recall. We've added a additional "Challenge" stages and slightly increased average level difficulty. We hope that you'll enjoy our new level designs even more. Sorry for any inconvenience we have caused you and thank you so much for playing our game.</p>
+          <p>Sincerely,<br />The Flash Recall Team</p>
+        </div>
+        <div class="modal-actions modal-actions--center">
+          <button id="contentResetAcknowledge" class="secondary" type="button">Continue</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="flashStageModal" aria-hidden="true">
+      <div class="modal-card modal-card--muted modal-card--flash">
+        <h3>Photosensitivity Warning</h3>
+        <p class="modal-note">
+          This flash level contains rapidly changing visuals and may trigger seizures for people with photosensitive epilepsy.
+        </p>
+        <label class="checkbox-inline flash-optout">
+          <input id="flashStageSkip" type="checkbox" />
+          Don't show this warning again
+        </label>
+        <div class="modal-actions">
+          <button id="flashStageStart" class="secondary icon-button" type="button" aria-label="Start (Enter)">
+            <img class="action-icon" src="imgs/play_button.png" alt="" />
+            <span class="action-key-hint" aria-hidden="true">(Enter)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="sharePreviewModal" aria-hidden="true">
+      <div class="modal-card modal-card--muted modal-card--share-preview">
+        <button class="interrupt-close icon-button modal-close" id="sharePreviewClose" type="button" aria-label="Close share preview">
+          <img class="action-icon" src="imgs/x_button.png" alt="" />
+        </button>
+        <h3>Share Your Score</h3>
+        <div class="share-preview-frame">
+          <img id="sharePreviewImage" alt="Preview of the score share image" />
+        </div>
+        <div class="share-preview-status" id="sharePreviewStatus" aria-live="polite"></div>
+        <div class="modal-actions share-preview-actions">
+          <button id="sharePreviewCopy" class="secondary share-preview-action" type="button" aria-label="Copy share image">
+            <img class="action-icon" src="imgs/icons/copy-icon.svg" alt="" />
+            <span>Copy</span>
+          </button>
+          <button id="sharePreviewDownload" class="share-preview-action" type="button" aria-label="Download share image">
+            <img class="action-icon" src="imgs/icons/download.svg" alt="" />
+            <span>Download</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flash-countdown" id="flashCountdown" aria-hidden="true">
+      <div class="flash-countdown__num">3</div>
+    </div>
+    <div class="interrupt-modal" id="interruptModal" aria-hidden="true" hidden>
+      <div class="interrupt-card">
+        <div class="interrupt-header">
+          <button class="interrupt-close icon-button modal-close" id="interruptClose" type="button" aria-label="Close">
+            <img class="action-icon" src="imgs/x_button.png" alt="" />
+          </button>
+        </div>
+        <div class="interrupt-body">Pop-up block</div>
+      </div>
+    </div>
+    <canvas class="fog-overlay" id="fogCanvas"></canvas>
+    <div class="fog-blur" id="fogBlur" aria-hidden="true"></div>
+    <div class="success-toast" id="successToast" aria-hidden="true">All correct!</div>
+    <div class="achievement-toast-stack" id="achievementToastStack" aria-live="polite" aria-atomic="false"></div>
+    <div class="config-hidden" hidden>
+      <select id="modeSelect">
+        <option value="practice" selected>Practice</option>
+        <option value="stages">Stages</option>
+        <option value="aminoAcids">Amino Acids</option>
+      </select>
+    </div>
+    <script src="version.js?v=20260217"></script>
+    <script src="player-name-data.js?v=1"></script>
+    <script src="firebase-analytics.js?v=20261020-amino-acids"></script>
+    <script src="ui-loader.js?v=20261022-map-only"></script>
+  </body>
+</html>
